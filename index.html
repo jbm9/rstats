@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<title>RStats - A collection of statistical tests and utility functions in ruby.</title>
+<link rel="stylesheet" type="text/css" href="project.css" />
+</head>
+
+<body>
+
+<div class="b">
+
+<h1>RStats</h1>
+
+<p>
+A collection of statistical tests and utility functions in ruby.
+</p>
+
+<p>
+Copyright (c) 2006,2007 <a href="http://www.joshisanerd.com/">Josh Myer</a> &lt;<a href="mailto:josh@joshisanerd.com">josh@joshisanerd.com</a>&gt;
+</p>
+
+<p>
+Released under the terms of the GPL v2 and v2 only (without the
+upgrade provision).  See the file COPYING for more information.
+</p>
+
+<h2>Overview</h2>
+
+<p>
+RStats is a collection of approximate statistical tests and
+techniques.  It's meant mostly as my notes while learning statistics,
+but I'm releasing it in the hopes that someone else might find it
+useful.
+</p>
+
+<p>
+Most people will only be interested in <tt>RStats.chi_square_gof</tt> and
+<tt>RStats.chi_square_cont</tt>, a ruby implementation of &chi;<sup><small>2</small></sup> (chi-squared)
+goodness-of-fit and &chi;<sup><small>2</small></sup> contingency/independence tests.
+</p>
+
+
+<h2>Usage</h2>
+
+<p>
+All the functions are documented, so you're best to simply look at the
+appropriate function documentation.  For examples, see the "unit
+tests" in test/.  These are made up of the questions at the end of
+each section of Langley's book.
+</p>
+
+
+<h2>Included Tests</h2>
+
+<p>
+The following tests are included in the current release:
+
+<ul>
+<li> The zM test. Langley pp152-9</li>
+<li> The Student's t test (due to Gosset).  Langley 160-5</li>
+<li> Wilcoxon's Sum of Ranks test.  Langley pp166-78</li>
+<li> Wilcoxon's Signed Ranks Test. Langley pp179-189</li.
+<li> Wilcoxon's Stratified Test.  Langley pp190-198</li>
+<li> Spearman's Correlation Test.  Langley pp199-211</li>
+<li> Kruskal and Wallis' Test.  Langley pp 212-21</li>
+<li> Friedman's Test.  Langley pp222-9</li>
+<li> &chi;<sup><small>2</small></sup> (Chi-Square) contingency test.  Bass; Langley pp269-84</li>
+<li> &chi;<sup><small>2</small></sup> (Chi-Square) goodness-of-fit test.  Bass; Langley pp269-84</li>
+</ul>
+</p>
+
+
+<h2>References and Sources</h2>
+
+<p><tt>Langley, Russell.  Practical Statistics Simply Explained.<br/>
+Dover Publications, Inc., New York, 1971.<br/>
+ISBN 0486227294<br/>
+<br/>
+Bass, Issa. A Zest of Non Parametric Testing - The Chi Square Test.<br/>
+SixSigmaFirst, http://www.sixsigmafirst.com/chi_square_test.htm<br/>
+Accessed 2006-12-20.<br/></tt></p>
+
+<p>
+The primary reference source for this is Russell Langley's excellent
+<i>Practical Statistics Simply Explained</i>.  It's a Dover print,
+available as ISBN 0-486-22729-4, for about 13$US.  The book is a
+gentle introduction to statistics, which makes it a good primer, but
+not a terribly good reference over the longer term.  It focuses on
+approximate tests, which give reasonably good results but are easy to
+run by hand.  Given the spread of computers since the book was
+written, most of the Also, it was written before computers were commonly
+available, which makes many of the tests described somewhat obsolete.
+</p>
+
+<p>
+Unfortunately, Langley's section on &chi;<sup><small>2</small></sup>
+is messy.  &chi;<sup><small>2</small></sup> is used in many different
+circumstances, all with different procedures.  In Langley, these are
+all presented in parallel, which is confusing.  To make the most
+common uses of &chi;<sup><small>2</small></sup> (that I use, at least)
+more clear, I did some quick googling.  Since it's such a common test,
+there's no shortage of tutorial sites on the web; feel free to find
+your own.  I like Bass's <i><a
+href="http://www.sixsigmafirst.com/chi_square_test.htm">A Zest of Non
+Parametric Testing - The Chi Square Test</a></i>, because it's short
+and to the point.
+</p>
+
+<p>
+Finally, the <tt>pochisq</tt> function is a direct translation of the
+C version available in the public domain.  The original C was done by
+Gary Perlman of Wang Institute, Tyngsboro, MA 01879.  With that in
+mind, the <tt>pochisq</tt> function may be freely adapted into the
+public domain (you'll need to pull in <tt>z_to_prob</tt> as well,
+which is a trivial function).
+</p>
+
+<hr>
+	
+	  <center><address>Copyright &copy; 2006,2007 <a href="mailto:josh@joshisanerd.com">Josh Myer</a><br/>
+	    <a href="http://www.joshisanerd.com/">The author's homepage</a>.</address></center>
+
+</div>
+
+</body>
+</html>
